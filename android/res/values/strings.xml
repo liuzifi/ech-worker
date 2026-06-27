@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ECH Worker VPN</string>
+    <string name="tile_label">ECH VPN</string>
+    <string name="tile_subtitle_running">运行中</string>
+    <string name="tile_subtitle_stopped">已停止</string>
+    <string name="notification_title">ECH VPN</string>
+    <string name="notification_content_running">VPN 代理运行中</string>
+    <string name="notification_content_connecting">正在连接...</string>
+    <string name="notification_content_stopped">VPN 已停止</string>
+</resources>
