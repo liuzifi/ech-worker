@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ECH Worker VPN"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- VPN 状态 -->
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="状态: 已停止"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- VPN 开关 -->
+        <Switch
+            android:id="@+id/switch_vpn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="启用 VPN"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- 服务器配置 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="服务器配置"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edit_server_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="服务器地址 (如: your-worker.workers.dev:443)"
+            android:inputType="textUri"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edit_server_ip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="服务器 IP (可选，留空自动解析)"
+            android:inputType="text"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edit_token"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="身份验证令牌"
+            android:inputType="textPassword"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edit_dns_server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DoH 服务器 (默认: dns.alidns.com/dns-query)"
+            android:inputType="text"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/edit_ech_domain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ECH 查询域名 (默认: cloudflare-ech.com)"
+            android:inputType="text"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 代理模式 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="代理模式"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/radio_proxy_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <RadioButton
+                android:id="@+id/radio_global"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="全局代理（所有应用）"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radio_whitelist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="白名单模式（仅指定应用）" />
+
+            <RadioButton
+                android:id="@+id/radio_blacklist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="黑名单模式（排除指定应用）" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/edit_app_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="应用包名列表，逗号分隔"
+                android:inputType="text"
+                android:enabled="false"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_select_apps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择应用"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- 保存配置按钮 -->
+        <Button
+            android:id="@+id/btn_save_config"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存配置"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>
